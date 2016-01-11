@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/2DPracticeProject.unity
+- path: Assets/Scenes/StartUp.unity
   isLoaded: 1
   isActive: 1
