@@ -36,10 +36,14 @@ public class PlayerMovement : MonoBehaviour
     /// Reference to player's rigidbody component.
     /// </summary>
     private Rigidbody2D m_RigidBody;
-
+    
+    // regions are just used for organization, you can collapse everything between the #region NAME and #endregion
     #region CONST VALUES
+
     /// <summary>
-    /// string literals used to avoid typos when looking at input axis
+    /// constant strings variables used to avoid typos when looking at input axis. Normally I would use a seperate 
+    /// class dedicated to holding constant values to avoid the use of any string literals and the sort, but this 
+    /// is small time stuff so here is fine
     /// </summary>
     const string MoveHorStr = "Horizontal";
     const string MoveVertStr = "Vertical";
