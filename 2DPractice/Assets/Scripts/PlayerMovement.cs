@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// RequireComponent creates a dependancy for this script. This means if you add this script as a component onto
+/// any gameobject, it will automatically add the component if it is not already present. This check (in my experience)
+/// only happens when the script is attached to the object, so any object which has the script attached before writing
+/// in RequireComponent will not have it automatically added and will not cause any errors. This is why I still have
+/// the error check in the start function because its better to not assume people won't screw with things :P
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -50,7 +57,9 @@ public class PlayerMovement : MonoBehaviour
         m_RigidBody = GetComponent<Rigidbody2D>();
         if (m_RigidBody == null)
         {
+            // this should be impossible due to the RequiredComponent making a rigidbody2d a dependancy
             Debug.LogError("no RigidBody2D found on PlayerMovement " + GetInstanceID());
+            this.enabled = false;
         }
 	}
 	
